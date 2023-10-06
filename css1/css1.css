@@ -1,0 +1,39 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    text-align: center;
+    font-family: Helvetica;
+}
+.logo {
+margin-bottom: 15px;
+margin-top: 15px;
+}
+h2{
+    font-size: 40px;
+    margin: 20px;
+}
+h2 strong {
+    color: blue;
+}
+.btn-list{
+    text-align: center;
+    margin: 40px;
+}
+.btn-list li{
+    display: inline;
+    margin: 0 15px;
+}
+.btn-list li a{
+    background-color:black ;
+    border-radius: 5%;
+    border-width: 0px;
+    color:white;
+    display: inline-block;
+    height: 55px;
+    width: 155px;
+    line-height: 50px;
+    text-decoration: none;
+    font-family: Helvetica;
+}
