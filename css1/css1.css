@@ -17,15 +17,15 @@ h2{
 h2 strong {
     color: blue;
 }
-.btn-list{
+.button{
     text-align: center;
     margin: 40px;
 }
-.btn-list li{
+.button li{
     display: inline;
     margin: 0 15px;
 }
-.btn-list li a{
+.button li a{
     background-color:black ;
     border-radius: 5%;
     border-width: 0px;
