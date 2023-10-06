@@ -1,0 +1,26 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: azure;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tieude {
+    text-align: center;
+    padding: 20px 0px;
+}
+.anh{
+    text-align: center;
+    padding-bottom: 20px;
+}
+img{
+    width: 400px;
+    height: 300px;
+}
+.a1{
+    margin: auto 20px;
+}
+.a1 strong {
+    color: red;
+}
