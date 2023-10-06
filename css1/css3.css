@@ -1,0 +1,33 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background-image: url(https://c.wallhere.com/photos/75/ca/1920x1080_px_Colorful_umbrellas-1555943.jpg!d);
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 18% 0px;
+}
+
+.title {
+    color:white;
+    font-size: 30px;
+    padding: 20px 0px;
+}
+.text1{
+     color:white;
+    font-size: 20px;
+    padding: 20px 0px; 
+}
+
+ .btn{
+    color:white;
+    font-size: 20px;
+    text-align: center;
+    background-color: #ed3030;
+    height: 60px;
+    width: 400px;
+    margin: 40px 0px;
+    border-radius: 4px;
+}
