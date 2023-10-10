@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0px auto;
+        width: 50%;
+    }
+    .container1 {
+        text-align: center;
+    }
+    .container2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .container3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .container__item {
+        justify-content: center;
+        width: 100%;
+        /* margin-left: 5px; */
+        padding: 20px;
+        padding-left: 4%;
+        margin-top: 20px;
+    }
+
+    .item {
+        width: 95%;
+        border-top: 5px solid;
+        border-color: #ebab60
+    }
+    .reason{
+        position: absolute;
+        margin-top: -7%;
+        padding-right: 5%;
+        padding-top: 0.5%;
+        width: 30%;
+        height: 10%;
+        background-color: rgba(228, 185, 135,0.7);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: left;
+    }
+    p{
+        padding-top: 1%;
+        padding-left: 5%;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="container1">
+            <img src="/anh/beach3.jpg" alt="" class="item1" style="width: 100%;">
+            <!-- <p> 4 Good Reason <br>For travelling with us</p> -->
+            <div class="reason">
+                <p>4 Good Reason</p>
+                <p>For travelling with us</p>
+            </div>
+        </div>
+        <div class="container2">
+            <div class="container__item">
+                <img src="/anh/cellphone.jpg" alt="" class="item"><br>
+                <span>Smart vacation</span><br>
+                <span> Full vacation control from your cell phone.</span>
+            </div>
+            <div class="container__item">
+                <img src="/anh/sealions.jpg" alt="" class="item"><br>
+                <span>Super Offers</span><br>
+                <span> Up to 50% offer. Always 25% student offers. </span>
+            </div>
+        </div>
+        <div class="container3">
+            <div class="container__item">
+                <img src="/anh/truck.jpg" alt="" class="item"><br>
+                <span>Car Rental Included</span><br>
+                <span> Wherever you travel our care rental is included. </span>
+            </div>
+            <div class="container__item">
+                <img src="/anh/nowornever.jpg" alt="" class="item"><br>
+                <span>Realize Your Dreams</span><br>
+                <span> Don't wait until it is to late </span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
