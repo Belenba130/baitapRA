@@ -1,0 +1,54 @@
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background: url(/css1/anh/b4840098df320b6c5223.jpg);
+        background-size: cover;
+    }
+    header, nav{
+        margin: 5px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    h2{
+        color: white;
+        font-family: 'Dancing Script', cursive;
+    }
+    nav ul{
+        display: flex;
+    }
+    nav> ul li{
+        list-style: none;
+    }
+    nav> ul li a{
+        display: block;
+        padding: 0 20px;
+        line-height: 50px;
+        color: #f1f2f3;
+        text-decoration: none;
+    }
+    nav ul li:hover>a{
+        opacity: .7;
+        color: orange;
+    }
+    .btn{
+        border-radius: 50px;
+        background-color: orange;
+        color: white;
+        width: 120px;
+        height: 40px;
+        margin-top: 5px;
+    }
+    .body{
+        color: white;
+        font-family: 'Dancing Script', cursive;
+        position: absolute;
+        top: 300px;
+        left: 150px;
+    }
+    i{
+        color: white;
+        margin: auto 5px;
+    }
