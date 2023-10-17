@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Nhập màu
+        let color = prompt("Nhap mau");
+        // so sánh màu
+        switch (color){
+            case "đỏ":
+            document.write(`<p style="color: red"> Đỏ </p>`);
+            break;
+            case "vàng":
+            document.write(`<p style="color: yellow"> Vàng </p>`);
+            break;
+            case "xanh":
+            document.write(`<p style="color: blue"> Xanh </p>`);
+            break;
+            // set default
+            default:
+                window.alert("màu không hợp lệ")
+        }
+    </script>
+</body>
+</html>

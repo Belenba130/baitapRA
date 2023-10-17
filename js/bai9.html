@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Nhập điểm từng môn
+        let math = +prompt("Nhập điểm toán");
+        let physical = +prompt("Nhập điểm lý");
+        let chemical = +prompt("Nhập điểm hóa");
+        let literature = +prompt("Nhập điểm văn");
+        let history = +prompt("Nhập điểm sử");
+        let geography = +prompt("Nhập điểm địa");
+        let result = 0;
+        var DTB = (math + physical + chemical + literature + history + geography) / 6;
+        DTB.toFixed(1);
+            // so sánh DTB
+            if (DTB < 0) {
+                alert("nhập điểm như này thì rớt là đúng rồi !!!");
+            }
+            // tạo result cho switch
+            else {
+                if (DTB < 5) result = 1;
+                if (DTB => 5 && DTB < 6.4) result = 2;
+                if (DTB => 6.5 && DTB < 8) result = 3;
+                if (DTB => 8 && DTB < 10) result = 4;
+            }
+            switch (result) {
+                case 1:
+                    alert("Yếu");
+                    break;
+                case 2:
+                    alert("Trung Bình");
+                    break;
+                case 3:
+                    alert("Khá");
+                    break;
+                case 4:
+                    alert("Giỏi");
+                    break;
+            }
+    </script>
+</body>
+
+</html>

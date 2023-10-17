@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // nhập tháng 
+        let m = +prompt("Nhap thang");
+        // kiểm tra tháng đó có mấy ngày
+        switch (m) {
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                alert(`Tháng ${m} có 30 ngày`);
+                break;
+            case 2:
+                // kiểm tra xem năm đó là nhuận hay không
+                let n = prompt("nhập năm");
+                if ((n % 4 == 0 && m % 100 != 0) | n % 400 == 0) {
+                    alert(` Tháng 2 năm ${n} có 29 ngày`);
+                }
+                else {
+                    alert(`Tháng 2 năm ${n} có 28 ngày`);
+                }
+                break;
+            default:
+                alert(`tháng ${m} có 31 ngày`);
+        }
+    </script>
+</body>
+
+</html>

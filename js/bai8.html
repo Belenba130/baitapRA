@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Nhập cân nặng
+        let w = prompt("Nhập cân nặng");
+        let h = prompt("Nhập chiều cao (m)");
+        var BMI = w/(h**2);
+        BMI.toFixed(2);
+        let result = 0;
+        // so sánh BMI
+        if (BMI==0){
+            alert("nhập sai cân nặng or chiều cao");
+        }
+        // tạo result cho switch
+        else{
+            if (BMI < 18.5) result= 1;
+            if (BMI => 18.5 && BMI < 25) result= 2;
+            if (BMI => 25 && BMI < 30) result= 3;
+            if (BMI => 30 && BMI < 35) result= 4;
+            if (BMI => 35 && BMI < 40) result= 5;
+            if (BMI > 40) result=6;
+        }
+        switch (result){
+            case 1:
+            alert("Gầy");
+            break;
+            case 2:
+            alert("Bình Thường");
+            break;
+            case 3:
+            alert("Tiền béo phì");
+            break;
+            case 4:
+            alert("Béo phì độ I");
+            break;
+            case 5:
+            alert("Béo phì độ II");
+            break;
+            case 6:
+            alert("Béo phì độ III");
+            break;
+        }
+    </script>
+</body>
+</html>
