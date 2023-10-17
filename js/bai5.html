@@ -9,31 +9,19 @@
 
 <body>
     <script>
-        // bai7
-        var a = 5;
-        let b = “5”;
-        console.log(a == b); true
-        console.log(a === b); false
-        console.log(a != b); false
-        console.log(a !== b); true
-        // bai 8
-        let a = 6;
-        let result = ++a + a + a++ + ++a + a; 48
-        // bai 9
-        console.log(0 || NaN || "Rikkei Academy" || null); 0
-        console.log(null || NaN || false || null); null
-        console.log(undefined || 1 || 5 || null); undefined
-        console.log("" || null || 5 || NaN); ""
-        console.log(1 || null || 12 || NaN); null
-        // bai 10
-        console.log(0 && 1 && "Rikkei Academy" && null); 1
-        console.log(2 && NaN && false && null); 2
-        console.log(3 && 1 && 5 && null);   3
-        console.log("1" && undefined && 5 && NaN);  "1"
-        console.log(1 && null && 12 && NaN);    1
-
-
+        // nhập số
+        let a = +prompt("Nhap so");
+        // so sánh số dư trong phép chia 2 của số được nhập với 0
+        switch (a%2) {
+            case 0:
+                window.alert("so chan");
+                break;
+            case 1:
+                window.alert("so le");
+                break;
+        }
     </script>
+
 </body>
 
 </html>

@@ -7,13 +7,15 @@
 </head>
 <body>
     <script>
-        let math = +prompt("nhap diem toan");
-        let physical = +prompt("nhap diem ly");
-        let chemical = +prompt("nhap diem hoa");
-        let total = math+physical+chemical;
-        let average = total/3;
-        console.log(total);
-        console.log(average); 
+        // nhập số
+        let numb = +prompt("Nhap so");
+        // so sánh số dư trong phép chia 2 của số được nhập với 0
+        if (numb % 2==0){
+            window.alert("Chan");
+        }
+        else{
+            window.alert("Le");
+        }
     </script>
 </body>
 </html>

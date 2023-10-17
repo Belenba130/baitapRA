@@ -7,12 +7,15 @@
 </head>
 <body>
     <script>
-        console.log("Welcome to Rikkei Academy");
-        window.prompt("mời bạn nhập số tuổi");
-        document.write("Quyết tâm học lập trình JS");
-        window.alert("Chào mừng bạn đến với học viện Rikkei Academy");
-        window.confirm("Bạn đã đủ 18 tuổi chưa");
-
+        // nhập tuổi
+        let tuoi = +prompt("Nhap so tuoi");
+        // so sánh tuổi 
+        if (tuoi <18){
+            window.alert("Ban chua du 18 tuoi");
+        }
+        else{
+            window.alert("Tren 18 tuoi");
+        }
     </script>
 </body>
 </html>
