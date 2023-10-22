@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let a = prompt("Enter a number");
+        let arr = a.split(''); // chuyển chuỗi thành mảng
+        let str = "";
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] % 2 == 0 && arr[i + 1] % 2 == 0) {
+                str += arr[i] + "-";
+            } else {
+                str += arr[i];
+            }
+        }
+        str += arr[arr.length - 1]; // thêm số cuối vào
+        document.write(str);
+    </script>
+</body>
+
+</html>

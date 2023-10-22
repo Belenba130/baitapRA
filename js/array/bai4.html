@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str=prompt("nhap chuoi vao");
+        let trans="";
+        for(let i=0; i<str.length;i++){
+            // kiểm tra xem ký tự đó là in hoa hay in thường hay là không phải chữ
+            if(str[i]>='a'&&str[i]<='z'){
+                trans+=str[i].toUpperCase();
+            }
+            else if(str[i]>='A'&&str[i]<='Z'){
+                trans+=str[i].toLowerCase();
+            }
+            else{
+                trans+=str[i];
+            }
+        }
+        console.log(trans);
+    </script>
+</body>
+</html>
