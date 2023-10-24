@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str = prompt("nhập chuỗi");
+        let count = {};
+        function xuLyChuoi() {
+            for (let i = 0; i < str.length; i++) {
+                let a = str[i];
+                count[str[i]] = (count[str[i]] || 0) + 1;
+            }
+            return count;
+        }
+        let str2 = xuLyChuoi(str);
+        for (let a in str2) {
+            console.log(`phan tu ${a} xuat hien ${str2[a]} lan`)
+        }
+    </script>
+</body>
+
+</html>

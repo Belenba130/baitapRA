@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function findMin(a, b, c) {
+            return Math.min(a, b, c)
+        }
+        let a = +prompt("nhap so thu nhat");
+        let b = +prompt("nhap so thu hai");
+        let c = +prompt("nhap so thu ba");
+        if (isNaN(a) || isNaN(b) || isNaN(c)) {
+            alert("Nhập lại số hợp lệ !!!")
+        }
+        else {
+            console.log(findMin(a, b, c));
+        }
+    </script>
+</body>
+
+</html>
