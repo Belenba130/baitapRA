@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+       function findStr(str) {
+        let maxStr = "";
+        let currentStr = "";
+
+        for (let i = 0; i < str.length; i++) {
+            const child = str[i];
+            const childIndex = currentStr.indexOf(child);
+            // console.log(child,childIndex);
+
+            if (childIndex !== -1) {
+                // check nếu tồn tại thì xóa
+                currentStr = currentStr.slice(childIndex + 1) + child;
+                // console.log(currentStr)
+            } else {
+                // nếu chưa xuất hiện thì thêm ký tự
+                currentStr += child;
+                // console.log(currentStr)
+                // tìm chuỗi dài nhất
+                if (currentStr.length > maxStr.length) {
+                    maxStr = currentStr;
+                    // console.log(maxStr)
+                }
+            }
+        }
+
+        return maxStr;
+    }
+
+    const str = prompt("nhập chuỗi");
+    console.log("kết quả: " + findStr(str) );
+    </script>
+</body>
+
+</html>
