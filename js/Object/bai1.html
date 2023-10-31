@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let stores = [
+            { id: 1, name: "Milk", count: 100 },
+            { id: 2, name: "Yakult", count: 100 },
+            { id: 3, name: "Butter", count: 100, }];
+
+        let carts = []
+        // tạo function mua hàng
+        function muaHang() {
+
+            let i = prompt("nhap hang muon mua");
+            for (let j in stores) {
+                var id = stores[j].id;
+                var name = stores[j].name;
+                var sl = 101 - stores[j].count;
+                var item = {
+                    id: id,
+                    name: name,
+                    sl: sl
+                }
+                if (i == stores[j].name) {
+                    stores[j].count--
+                    carts.push(item)
+                }
+            }
+        }
+        // tạo function in hàng
+        function inHang() {
+            console.log("=== Stores ===");
+            console.log(stores)
+            console.log("=== Cart ===");
+            console.log(carts)
+        }
+        // tạo function update hàng
+        function updateHang() {
+            let a = +prompt("nhap ID san pham can update")
+            if (!isNaN(a) && a > 0 && a <= carts.length) {
+                let change = +prompt("Nhap so luong can thay doi")
+                carts[a - 1].count = change;
+                stores[a - 1].count = 100 - change;
+            }
+        }
+        // tạo function xóa hàng
+        function xoaHang() {
+            let b = +prompt("nhap ID san pham can xoa")
+            if (!isNaN(b) && b > 0 && b <= carts.length) {
+                delete carts[b - 1]
+                console.log(carts)
+            }
+        }
+        // tạo hàm cho người dùng nhập vào C,R,U,D,E và chạy chương trình tương ứng
+        while (true) {
+            let nhap = prompt("Nhập C/R/U/D/E để thực hiện hành động tương ứng:")
+            if (nhap == "C") { muaHang() }
+            else if (nhap == "R") { inHang() }
+            else if (nhap == "U") { updateHang() }
+            else if (nhap == "D") { xoaHang() }
+            else if (nhap == "E") {alert("Cảm ơn bạn đã đến với Rikkei Stores"); break;}
+            else {
+                alert("Nhập không đúng vui lòng nhập lại")
+            }
+        }
+    </script>
+</body>
+
+</html>
