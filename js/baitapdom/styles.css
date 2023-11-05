@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(28,28,56,255);
+    margin-top: 20px;
+}
+section{
+    background-color: white;
+    margin-bottom: 20px;
+    width: 50%;
+    margin-left: 370px;
+    height: 500px;
+}
+div>h1{
+    color: palevioletred;
+}
+
+label, textarea {
+    display: block;
+    margin: 10px 0;
+}
+.pointsheet>label{
+    padding-top: 20px;
+}
+.point{
+   display: inline-block;
+   list-style: none;
+   justify-content: center;
+   writing-mode: vertical-lr !important;
+   margin-top: 20px;
+  
+}
+.listpoint{
+    border-radius: 50%;
+    border: 1px solid #000;
+    margin: auto 5px;
+    writing-mode: horizontal-tb;
+    width: 30px;
+    height: 30px;
+    padding-top: 5px;
+    background-color: #f3f1f4;
+}
+.listpoint:hover{
+    background-color:pink ;
+}
+.commentsheet{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    width: 500px;
+    margin-left: 100px;
+    margin-top: 30px;
+    height: 50px;
+    border-radius: 5px;
+}
+#comment{
+    border: none;
+    width: 220px;
+    height: 39px;
+    width: 420px;
+    margin-top: 5px;
+    margin-left: 5px;
+    text-align: left;
+    padding-left: 3px;
+    flex-grow: 1;
+}
+.btn{
+    align-self: flex-start;
+    box-sizing: border-box;
+    height: 39px;
+    width: 60px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.active{
+    background-color: pink;
+}
+#comment {
+    border: none;
+    width: 300px;
+    flex-grow: 1;
+}
+#feedbackList span {
+    margin-right: 300px;
+  
+}
+#feedbackList p{
+    border-radius: 50%;
+    border: 1px solid #000;
+    width: 30px;
+    height: 30px;
+    padding-top: 5px;
+    background-color: pink;
+    margin-left: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#feedbackList i{
+    margin: auto 5px;
+}

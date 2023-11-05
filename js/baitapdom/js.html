@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/b12a0f6b89.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div>
+        <h1>Feedback Coach</h1>
+    </div>
+    <section>
+        <form id="feedbackForm">
+            <div class="pointsheet">
+                <label for="rating">Thầy dạy anh em có hay không </label>
+                <ul class="point">
+                    <li class="listpoint" onclick="chonDiem(this)" class=active>1</li>
+                    <li class="listpoint" onclick="chonDiem(this)">2</li>
+                    <li class="listpoint" onclick="chonDiem(this)">3</li>
+                    <li class="listpoint" onclick="chonDiem(this)">4</li>
+                    <li class="listpoint" onclick="chonDiem(this)">5</li>
+                    <li class="listpoint" onclick="chonDiem(this)">6</li>
+                    <li class="listpoint" onclick="chonDiem(this)">7</li>
+                    <li class="listpoint" onclick="chonDiem(this)">8</li>
+                    <li class="listpoint" onclick="chonDiem(this)">9</li>
+                    <li class="listpoint" onclick="chonDiem(this)">10</li>
+                </ul>
+            </div>
+            <div class="commentsheet">
+                <input id="comment"></input>
+                <button type="submit" class="btn">Send</button>
+            </div>
+        </form>
+
+        <div id="feedbackList">
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
