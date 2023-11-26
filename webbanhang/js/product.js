@@ -33,7 +33,7 @@ function displayProducts() {
                     <p>${product.description}</p>
                     <div>
                     <i class="fa-solid fa-heart fa-lg" style="cursor: pointer;"></i>
-                    <i class="fa-solid fa-cart-shopping fa-lg" style="cursor: pointer;"></i>
+                    <i class="fa-solid fa-cart-shopping fa-lg" onclick="addToCart(${product.id})" style="cursor: pointer;"></i>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@ function showListPage() {
             `<li class="page-link "onclick="choosePage(${i})">${i}</li>`;
     }
     document.getElementsByClassName("list-page")[0].innerHTML =
-    `
+        `
   <span  onclick="prePage()" class="page-link"  >Previous
   </span>
     ${text}
@@ -124,7 +124,7 @@ function displayFilteredProducts(filteredProducts) {
             <p>${singleProduct.description}</p>
             <div>
             <i class="fa-solid fa-heart fa-lg" style="cursor: pointer;"></i>
-            <i class="fa-solid fa-cart-shopping fa-lg" onclick = "addToCart()"  style="cursor: pointer;"></i>
+            <i class="fa-solid fa-cart-shopping fa-lg" onclick="addToCart(${product.id})"  style="cursor: pointer;"></i>
             </div>
         </div>
     </div>
@@ -134,33 +134,37 @@ function displayFilteredProducts(filteredProducts) {
     });
 }
 
-function addToCart(productId) {
+function addToCart(idProduct) {
+    let checkLogin = localStorage.getItem("idUser");
     let users = JSON.parse(localStorage.getItem("users")) || [];
-    let currentUserID = localStorage.getItem("idUser");
+    let products = JSON.parse(localStorage.getItem("products")) || [];
 
-    let productToAdd = products.find(product => product.id === productId);
-    if (!productToAdd) {
-        console.error("Sản phẩm không tồn tại");
+    if (!checkLogin) {
+        console.log("Vui lòng đăng nhập để mua hàng");
         return;
     }
 
-    // Tìm người dùng hiện tại
-    let currentUser = users.find(user => user.id === currentUserID);
+    let currentUser = users.find(user => user.id == checkLogin);
+
     if (!currentUser) {
-        console.error("Người dùng không tồn tại");
+        console.log("Người dùng không tồn tại");
         return;
     }
 
-    currentUser.cart = currentUser.cart || [];
-    currentUser.cart.push(productToAdd);
-    let updatedUsers = users.map(user => {
-        if (user.id === currentUserID) {
-            return currentUser;
-        }
-        return user;
-    });
+    let productToAdd = products.find(product => product.id == idProduct);
 
-    localStorage.setItem("users", JSON.stringify(updatedUsers));
+    if (!productToAdd) {
+        console.log("Sản phẩm không tồn tại");
+        return;
+    }
+
+    let existingProduct = currentUser.cart.find(item => item.id == idProduct);
+
+    if (existingProduct) {
+        existingProduct.quantity++;
+    } else {
+        currentUser.cart.push({ ...productToAdd, quantity: 1 });
+    }
+
+    localStorage.setItem("users", JSON.stringify(users));
 }
-
-

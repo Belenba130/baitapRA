@@ -4,27 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hearts</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="product.css">
+    <title>User</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/user.css">
     <script src="https://kit.fontawesome.com/b12a0f6b89.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-pagination/1.2.7/jquery.pagination.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-pagination/1.2.7/jquery.pagination.min.js"></script>
 </head>
-
 <body>
-
-
-
-
     <div class="container-fluid">
         <div class="row flex-nowrap ">
             <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                     <a href="/"
                         class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                        <span class="fs-5 d-none d-sm-inline fw-bold">Admin</span>
+                        <span class="fs-5 d-none d-sm-inline fw-bold mt-5 text-lg">Profile</span>
                     </a>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 mt-2 align-items-center align-items-sm-start"
                         id="menu">
@@ -44,21 +36,43 @@
                             id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="./img/avatar-3814049_1280.png" alt="user" width="50" height="50"
                                 class="rounded-circle" id="user-img">
-                            <span class="d-none d-sm-inline mx-1"></span>
+                            <span class="d-none d-sm-inline mx-1" id="user-name"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="main.html">Home</a></li>
                             <li><a class="dropdown-item" href="#">Profile</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()">Sign out</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="col py-3">
-             content..
+            <div class="col py-3 mt-5">
+                <h1 class="mt-5 mb-5 text-center">My Buying Products</h1>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="ms-4">Stt</th>
+                            <th>Name</th>
+                            <th>Image</th>
+                            <th>Price</th>
+                            <th>Qual.</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody1">
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="5">Total Pay</th>
+                            <th colspan="2" class="pay" style="text-align: right;padding-right: 30px;">1</th>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
         </div>
     </div>
@@ -68,8 +82,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="product.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/user.js"></script>
 
 </body>
 

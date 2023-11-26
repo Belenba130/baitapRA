@@ -12,6 +12,7 @@ function displayUsers() {
 
         const idCell = document.createElement('td');
         idCell.textContent = user.id;
+        idCell.classList.add('ps-4')
         row.appendChild(idCell);
 
 
@@ -27,8 +28,8 @@ function displayUsers() {
 
         // tạo button
         const editButton = document.createElement('button');
-        editButton.textContent = 'Edit';
-        editButton.classList.add('btn', 'btn-primary', 'btn-sm');
+        editButton.textContent = 'Change';
+        editButton.classList.add('btn', 'btn-success', 'btn-sm','me-3');
         editButton.addEventListener('click', () => {
             if (user.status === 'Active') {
                 user.status = 'Block';
@@ -39,6 +40,20 @@ function displayUsers() {
             displayUsers();
         });
         actionCell.appendChild(editButton);
+        const ruleButton = document.createElement('button');
+        ruleButton.textContent = 'Rule';
+        ruleButton.classList.add('btn', 'btn-primary', 'btn-sm','me-3');
+        ruleButton.addEventListener('click', () => {
+            if (user.rule === 0) {
+                user.rule = 1;
+            } else {
+                user.rule = 0;
+            }
+            localStorage.setItem('users', JSON.stringify(users));
+            displayUsers();
+        });
+        actionCell.appendChild(ruleButton);
+
 
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
@@ -125,52 +140,65 @@ function displayProducts() {
 }
 
 displayProducts();
-// function editProduct(product) {
-//     const nameInput = document.createElement('input');
-//     nameInput.value = product.name;
-//     const qualityInput = document.createElement('input');
-//     qualityInput.value = product.stock;
-//     const costInput = document.createElement('input');
-//     costInput.value = product.price;
-//     const statusInput = document.createElement('input');
-//     statusInput.value = product.status;
 
-//     const row = document.querySelector(`tr[data-product-id="${product.id}"]`);
-//     if (!row) return;
+// ...
 
-//     const nameCell = row.querySelector('td:nth-child(2)');
-//     const qualityCell = row.querySelector('td:nth-child(3)');
-//     const costCell = row.querySelector('td:nth-child(4)');
-//     const statusCell = row.querySelector('td:nth-child(5)');
+// Function to populate edit form with product details
+function editProduct(product) {
+    const editProductName = document.getElementById('editProductName');
+    const editProductStock = document.getElementById('editProductStock');
+    const editProductPrice = document.getElementById('editProductPrice');
+    const editProductStatus = document.getElementById('editProductStatus');
 
-//     nameCell.innerHTML = '';
-//     nameCell.appendChild(nameInput);
-//     qualityCell.innerHTML = '';
-//     qualityCell.appendChild(qualityInput);
-//     costCell.innerHTML = '';
-//     costCell.appendChild(costInput);
-//     statusCell.innerHTML = '';
-//     statusCell.appendChild(statusInput);
+    editProductName.value = product.name;
+    editProductStock.value = product.stock;
+    editProductPrice.value = product.price;
+    editProductStatus.value = product.status;
 
-//     nameInput.addEventListener('input', () => {
-//         product.name = nameInput.value;
-//         localStorage.setItem('products', JSON.stringify(products));
-//     });
+    document.getElementById('editProductForm').style.display = 'block';
 
-//     qualityInput.addEventListener('input', () => {
-//         product.stock = qualityInput.value;
-//         localStorage.setItem('products', JSON.stringify(products));
-//     });
+    // Save the edited product on click of the 'Save' button
+    document.getElementById('editSaveButton').onclick = function() {
+        saveEditedProduct(product);
+    };
+}
 
-//     costInput.addEventListener('input', () => {
-//         product.price = costInput.value;
-//         localStorage.setItem('products', JSON.stringify(products));
-//     });
+// Function to save edited product
+function saveEditedProduct(product) {
+    const editProductName = document.getElementById('editProductName').value;
+    const editProductStock = parseInt(document.getElementById('editProductStock').value);
+    const editProductPrice = parseFloat(document.getElementById('editProductPrice').value);
+    const editProductStatus = document.getElementById('editProductStatus').value;
 
-//     statusInput.addEventListener('input', () => {
-//         product.status = statusInput.value;
-//         localStorage.setItem('products', JSON.stringify(products));
-//     });
-// }
+    if (editProductName && !isNaN(editProductStock) && !isNaN(editProductPrice)) {
+        product.name = editProductName;
+        product.stock = editProductStock;
+        product.price = editProductPrice;
+        product.status = editProductStatus;
+
+        const index = products.findIndex(p => p.id === product.id);
+        if (index !== -1) {
+            products[index] = product;
+            localStorage.setItem('products', JSON.stringify(products));
+            displayProducts();
+            document.getElementById('editProductForm').style.display = 'none';
+        }
+    } else {
+        alert('Invalid input! Please provide valid details.');
+    }
+}
 
 
+function chang (){
+    let userpage = document.getElementById('user');
+    let productpage = document.getElementById('products');
+    userpage.style.display = "none";
+    productpage.style.display="block";
+}
+
+function change (){
+    let userpage = document.getElementById('user');
+    let productpage = document.getElementById('products');
+    userpage.style.display = "block";
+    productpage.style.display="none";
+}

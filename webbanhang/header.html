@@ -8,16 +8,15 @@
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ms-4">
           <li><a href="main.html" class="nav-link px-2 text-secondary">Home</a></li>
           <li><a href="products.html" class="nav-link px-2 text-white">Products</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Checkout</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Contact</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+          <li><a href="checkout.html" class="nav-link px-2 text-white">Checkout</a></li>
+          <li><a href="#" class="nav-link px-2 text-white" onclick="scrollToBottom()">Contact</a></li>
+          <li><a href="about.html" class="nav-link px-2 text-white">About</a></li>
         </ul>
-        <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2"><a href="login.html" class="link-offset-2 link-underline link-underline-opacity-0">Login</a></button>
-          <button type="button" class="btn btn-warning me-5"><a href="login.html" class="link-offset-2 link-underline link-underline-opacity-0">Sign-up</a></button>
+        <div class="text-end me-4">
+          <button type="button" class="btn btn-outline-light me-2" id="loginbtn"><a href="login.html" class="link-offset-2 link-underline link-underline-opacity-0 ">Login/Sign Up</a></button>
         </div>
         <div class="icon-container me-4">
-          <a href=""><i class="fa-solid fa-user fa-xl " style="cursor: pointer;"></i></a>
+          <a href="user.html"><i class="fa-solid fa-user fa-xl " style="cursor: pointer;"></i></a>
           <span class="icon-badge user-badge">0</span>
         </div>
         <div class="icon-container me-4 ">
@@ -25,11 +24,13 @@
           <span class="icon-badge heart-badge">0</span>
         </div>
         <div class="icon-container me-4">
-          <a href=""><i class="fa-solid fa-cart-shopping fa-xl" style="cursor: pointer;"></i></a>
+          <a href="checkout.html"><i class="fa-solid fa-cart-shopping fa-xl" style="cursor: pointer;"></i></a>
           <span class="icon-badge cart-badge">0</span>
         </div>
       </div>
     </div>
     </div>
     </div>
+
+    <script src="./js/header.js"></script>
   </header>

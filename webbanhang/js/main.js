@@ -35,7 +35,7 @@ let products = [
     {
         name: "Nón Lá 1",
         price: 50000,
-        image: "img/nón lá 1.jpg",
+        image: "img/nónlá1.jpg",
         id: 103,
         description: "",
         stock: 50,
@@ -43,7 +43,7 @@ let products = [
     {
         name: "Nón Lá 2",
         price: 70000,
-        image: "img/nón lá 3.jpg",
+        image: "img/nónlá3.jpg",
         id: 104,
         description: "",
         stock: 50,
@@ -51,7 +51,7 @@ let products = [
     {
         name: "Đũa Tre 1",
         price: 20000,
-        image: "img/đũa tre 1.jpg",
+        image: "img/đũatre1.jpg",
         id: 105,
         description: "",
         stock: 50,
@@ -59,7 +59,7 @@ let products = [
     {
         name: "Đũa Tre 2",
         price: 40000,
-        image: "img/đũa tre 2.jpg",
+        image: "img/đũatre2.jpg",
         id: 106,
         description: "",
         stock: 50,
@@ -67,7 +67,7 @@ let products = [
     {
         name: "Nhang Thơm 1",
         price: 50000,
-        image: "img/nahng 1.jpg",
+        image: "img/nahng1.jpg",
         id: 107,
         description: "",
         stock: 50,
@@ -75,7 +75,7 @@ let products = [
     {
         name: "Nhang Thơm 2",
         price: 80000,
-        image: "img/nhang 2.jpg",
+        image: "img/nhang2.jpg",
         id: 108,
         description: "",
         stock: 50,
@@ -108,8 +108,8 @@ function displayProducts(products, container) {
                     <p>Giá: ${singleProduct.price} VND</p>
                     <p>${singleProduct.description}</p>
                     <div>
-                    <a> <i class="fa-solid fa-heart fa-lg"style="cursor: pointer;"></i></a>
-                    <a> <i class="fa-solid fa-cart-shopping fa-lg" style="cursor: pointer;"></i></a>
+                        <a><i class="fa-solid fa-heart fa-lg" style="cursor: pointer;"></i></a>
+                        <a><i class="fa-solid fa-cart-shopping fa-lg" onclick="addToCart(${singleProduct.id})" style="cursor: pointer;"></i></a>
                     </div>
                 </div>
             </div>
@@ -120,3 +120,35 @@ function displayProducts(products, container) {
 
 displayProducts(products, productsContainer);
 
+function addToCart(idProduct) {
+    let checkLogin = localStorage.getItem("idUser");
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let products = JSON.parse(localStorage.getItem("products")) || [];
+
+    if (!checkLogin) {
+        console.log("Vui lòng đăng nhập để mua hàng");
+        return;
+    }
+
+    let currentUser = users.find(user => user.id == checkLogin);
+
+    if (!currentUser) {
+        console.log("Người dùng không tồn tại");
+        return;
+    }
+
+    let productToAdd = products.find(product => product.id == idProduct);
+
+    if (!productToAdd) {
+        console.log("Sản phẩm không tồn tại");
+        return;
+    }
+    let existingProductIndex = currentUser.cart.findIndex(item => item.id == idProduct);
+
+    if (existingProductIndex !== -1) {
+        currentUser.cart[existingProductIndex].quantity++;
+    } else {
+        currentUser.cart.push({ ...productToAdd, quantity: 1 });
+    }
+    localStorage.setItem("users", JSON.stringify(users));
+}

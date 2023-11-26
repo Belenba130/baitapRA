@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Out</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        td {
+            width: 100px;
+            height: 100px;
+        }
+
+        img {
+            width: 80%;
+            height: 80%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-5 text-center">Check Out</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="ms-4">Stt</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Qual.</th>
+                    <th>Total</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="5">Total Pay</th>
+                    <th class="pay">1</th>
+                    <th><button type="button" class="btn btn-outline-info">Checkout</button></th>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="text-right mt-5">
+            <span><a href="products.html"><button type="button" class="btn btn-outline-success" >Back to home</button></a></span>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/checkout.js"></script>
+</body>
+
+</html>

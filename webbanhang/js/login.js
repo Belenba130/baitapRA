@@ -28,10 +28,14 @@ function signUp() {
         id: uuid(),
         cart: [],
         status: "Active", 
+        rule: 0,
+        pay:0
     }
 
     let find = users.filter((item) => {
-        return item.email == email;
+     
+        return item.email == email; 
+
     });
     if (find.length !== 0) {
         alert("Email has already been registered");
@@ -51,6 +55,7 @@ function signUp() {
 
 
 function signIn() {
+    event.preventDefault();
     let users = JSON.parse(localStorage.getItem("users")) || [];
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
@@ -60,7 +65,7 @@ function signIn() {
     for (let i = 0; i < users.length; i++) {
         if (users[i].email === email && users[i].password === password) {
             localStorage.setItem("idUser", users[i].id);
-            window.location.href = "./header.html";
+            window.location.href = "./products.html";
             accountExists = true;
             break;
         }
@@ -68,8 +73,11 @@ function signIn() {
 
     if (!accountExists) {
         alert("Tài khoản không tồn tại!");
+    }else {
+        alert("Login Success!")
     }
 }
+
 
 
 
