@@ -168,3 +168,9 @@ function addToCart(idProduct) {
 
     localStorage.setItem("users", JSON.stringify(users));
 }
+
+
+function logOut() {
+    localStorage.removeItem('idUser');
+    window.location.href = 'login.html';
+}

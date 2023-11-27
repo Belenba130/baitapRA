@@ -6,11 +6,11 @@ function scrollToBottom() {
     });
 }
 
-// thầy ơi coi giúp em phần này nữa ạ
+
 
 function updateLoginButton() {
     const loginButton = document.getElementById('loginbtn');
-    const checkLogin = localStorage.getItem('idUser');
+    const checkLogin = parseInt(localStorage.getItem('idUser'));
     const users = JSON.parse(localStorage.getItem('users')) || [];
     console.log(users)
   

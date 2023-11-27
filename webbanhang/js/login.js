@@ -40,6 +40,8 @@ function signUp() {
     if (find.length !== 0) {
         alert("Email has already been registered");
         return;
+    }else{
+        alert("Sign Up Success!")
     }
 
     users.push(obj);
@@ -64,10 +66,16 @@ function signIn() {
 
     for (let i = 0; i < users.length; i++) {
         if (users[i].email === email && users[i].password === password) {
+            if (users[i].rule==0){
             localStorage.setItem("idUser", users[i].id);
             window.location.href = "./products.html";
             accountExists = true;
-            break;
+            break;}
+            else{
+                localStorage.setItem("idUser", users[i].id);
+                window.location.href = "./admin.html";
+                accountExists = true;
+            }
         }
     }
 

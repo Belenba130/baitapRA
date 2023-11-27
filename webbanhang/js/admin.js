@@ -140,10 +140,6 @@ function displayProducts() {
 }
 
 displayProducts();
-
-// ...
-
-// Function to populate edit form with product details
 function editProduct(product) {
     const editProductName = document.getElementById('editProductName');
     const editProductStock = document.getElementById('editProductStock');
@@ -157,13 +153,11 @@ function editProduct(product) {
 
     document.getElementById('editProductForm').style.display = 'block';
 
-    // Save the edited product on click of the 'Save' button
     document.getElementById('editSaveButton').onclick = function() {
         saveEditedProduct(product);
     };
 }
 
-// Function to save edited product
 function saveEditedProduct(product) {
     const editProductName = document.getElementById('editProductName').value;
     const editProductStock = parseInt(document.getElementById('editProductStock').value);
@@ -202,3 +196,10 @@ function change (){
     userpage.style.display = "block";
     productpage.style.display="none";
 }
+
+function logOut() {
+    localStorage.removeItem('idUser');
+    window.location.href = 'login.html';
+}
+
+
